@@ -32,7 +32,7 @@ struct HomeView: View {
                                         .onAppear(perform: {
                                             model.beginModule(module.id)
                                         }),
-                                    tag: module.id,
+                                    tag: module.id.hash, //.hash gives an integer representation of a string
                                     selection: $model.currentContentSelected) {
                                         
                                         // Learning Card
@@ -46,7 +46,7 @@ struct HomeView: View {
                                         .onAppear(perform: {
                                             model.beginTest(module.id)
                                         }),
-                                    tag: module.id,
+                                    tag: module.id.hash,
                                     selection: $model.currentTestSelected) {
                                         
                                         // Test Card
